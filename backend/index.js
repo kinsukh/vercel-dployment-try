@@ -10,19 +10,19 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.set("strictQuery", true);
-mongoose.connect("mongodb+srv://arpitbaheti:santoshBaheti02@appu.u6vqlco.mongodb.net/VibesVault")
+// mongoose.set("strictQuery", true);
+// mongoose.connect("mongodb+srv://arpitbaheti:santoshBaheti02@appu.u6vqlco.mongodb.net/VibesVault")
 
-const db = mongoose.connection;
-db.on("open", ()=>{
-  console.log("database connected");
-});
-db.on("error", ()=>{
-  console.log("error in connectiong to database");
-});
+// const db = mongoose.connection;
+// db.on("open", ()=>{
+//   console.log("database connected");
+// });
+// db.on("error", ()=>{
+//   console.log("error in connectiong to database");
+// });
 
-app.use("/users", userRoutes);
-app.use("/playlists", playlistRoutes);
+// app.use("/users", userRoutes);
+// app.use("/playlists", playlistRoutes);
 
 app.use("/",(req,res) => {
   res.send("server is running");
